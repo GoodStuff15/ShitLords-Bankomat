@@ -26,5 +26,6 @@ namespace Shitlords_Bankomat
             _ownerID = ownerID;
         }
 
+
     }
 }
