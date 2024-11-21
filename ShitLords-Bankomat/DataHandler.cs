@@ -156,5 +156,32 @@
 
             File.WriteAllLines(UserPath, openFile);
         }
+
+        public List<User> GetBlockedUsers()
+        {
+            string[] openFile = File.ReadAllLines(UserPath);
+
+            var blockedusers = new List<User>();
+
+            foreach (string line in openFile)
+            {
+                if (line.Contains("Blocked")
+                {
+                    string[] variables = line.Split('|');
+                    string id = variables[0];
+                    string pw = variables[1];
+                    string fn = variables[2];
+                    string ln = variables[3];
+                    var customer = new Customer(id, pw, fn, ln);
+
+                    blockedusers.Add(customer);
+                }
+            }
+
+            return blockedusers;
+
+        }
+
+        
     }
 }
