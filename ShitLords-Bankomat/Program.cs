@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            
 
+             menu = new Menu();
 
 
         }

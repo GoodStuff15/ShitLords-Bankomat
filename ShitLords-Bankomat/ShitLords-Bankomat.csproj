@@ -8,4 +8,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DataHandler\" />
+    <Folder Include="Transactions\" />
+  </ItemGroup>
+
 </Project>
