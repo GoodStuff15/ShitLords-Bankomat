@@ -4,9 +4,11 @@
     {
         private string _id;
         private string _passWord;
+
+        public abstract string UserType { get; set; }
         public bool IsLoggedIn { get; set; }
         //Menu userMenu
-        private DataHandler _dataHandler;
+        //private DataHandler _dataHandler;
 
         public User(string id, string passWord)
         {
