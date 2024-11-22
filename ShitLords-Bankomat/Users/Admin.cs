@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shitlords_Bankomat.Users
+﻿namespace Shitlords_Bankomat.Users
 {
     internal class Admin : User
     {
