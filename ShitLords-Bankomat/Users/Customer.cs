@@ -16,5 +16,11 @@
             LastName = lastName;
             IsBlocked = false;
         }
+
+        public override string ToString()
+        {
+            return $"{Id}|{UserType}|{FirstName}|{LastName}";
+        }
+
     }
 }
