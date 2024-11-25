@@ -2,7 +2,7 @@
 {
     internal class AdminFactory : UserFactory
     {
-        public override User MakeUser()
+        public override User MakeUser(UserDataHandler n)
         {
         //    string id;
         //    string password;

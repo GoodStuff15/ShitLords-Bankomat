@@ -7,7 +7,6 @@ namespace Shitlords_Bankomat
         public static int nextId = 1;
         public override User MakeUser(UserDataHandler udh)
         {
-
             string userType = "Customer";
             string id = $"CUS{nextId}";
             Console.WriteLine("Enter your first name:");
@@ -23,9 +22,8 @@ namespace Shitlords_Bankomat
             Console.WriteLine("Choose a password:");
             string password = Console.ReadLine();
 
-
             
-            User user = new Customer(id, password, fName, lName);
+            User user = new Customer(id, password, fName, lName, username);
 
             return user;
             

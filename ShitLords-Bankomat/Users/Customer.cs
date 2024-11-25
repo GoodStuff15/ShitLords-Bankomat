@@ -14,7 +14,7 @@ namespace Shitlords_Bankomat
 
         public bool IsBlocked { get; set; }
 
-        public Customer(string id, string passWord, string firstName, string lastName) : base(id, passWord)
+        public Customer(string id, string passWord, string firstName, string lastName, string userName) : base(id, passWord, userName)
         {
             accounts = new List<Account>();
             FirstName = firstName;
@@ -26,7 +26,8 @@ namespace Shitlords_Bankomat
 
         public override string ToString()
         {
-            return $"{Id}|{UserType}|{FirstName}|{LastName}";
+            
+            return $"{Id}|{UserType}|{FirstName}|{LastName}|";
         }
 
     }

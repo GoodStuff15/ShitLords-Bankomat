@@ -26,7 +26,8 @@ namespace Shitlords_Bankomat
 
         public override string ToString()
         {
-            return $"{Id}|{UserType}|{FirstName}|{LastName}";
+            
+            return $"{Id}|{UserType}|{FirstName}|{LastName}|";
         }
 
     }

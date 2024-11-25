@@ -49,7 +49,8 @@ namespace Shitlords_Bankomat
                             string pw = variables[1];
                             string fn = variables[2];
                             string ln = variables[3];
-                            var customer = new Customer(id, pw, fn, ln);
+                    string un = variables[4];
+                            var customer = new Customer(id, pw, fn, ln,un);
 
                             return customer;
                         }
@@ -58,7 +59,7 @@ namespace Shitlords_Bankomat
                             string[] variables = line.Split('|');
                             string id = variables[0];
                             string pw = variables[1];
-                            var admin = new Admin(id, pw);
+                            var admin = new Admin(id, pw, "hej");
 
                             return admin;
                         }
@@ -82,7 +83,8 @@ namespace Shitlords_Bankomat
                     string pw = variables[1];
                     string fn = variables[2];
                     string ln = variables[3];
-                    var customer = new Customer(id, pw, fn, ln);
+                    string un = variables[4];
+                    var customer = new Customer(id, pw, fn, ln, un);
 
                     allusers.Add(customer);
                 }
