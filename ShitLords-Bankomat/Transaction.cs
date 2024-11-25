@@ -1,6 +1,6 @@
 ﻿namespace Shitlords_Bankomat
 {
-    internal class Transaction
+    public class Transaction
     {
         private decimal _amount;
         private int _fromAccount;
