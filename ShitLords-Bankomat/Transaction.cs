@@ -21,10 +21,10 @@
         }
         public bool TransferFunds() //Method for moneytransfer
         {
-            if(FromAccount.Amount >= Amount)
+            if(FromAccount.Balance >= Amount)
             {
-                FromAccount.Amount -= Amount;
-                ToAccount.Amount += Amount;
+                FromAccount.Balance -= Amount;
+                ToAccount.Balance += Amount;
                 return true;
                 //LOG
             }
@@ -34,16 +34,16 @@
                 return false;
             }
         }
-        public void Log()
-        {
-            var logEntry = new History
-            {
-                Date = TransferDate,
-                Amount = Amount,
-            };
-            FromAccount.history.Add(logEntry);
-            ToAccount.history.Add(logEntry);
-        }
+        //public void Log()
+        //{
+        //    var logEntry = new History
+        //    {
+        //        Date = TransferDate,
+        //        Amount = Amount,
+        //    };
+        //    FromAccount.history.Add(logEntry);
+        //    ToAccount.history.Add(logEntry);
+        //}
         public override string ToString()
         {
             return $"{TransferDate}: Amount:{Amount} | From account:{FromAccount.AccountNumber} | To account:{ToAccount.AccountNumber}";

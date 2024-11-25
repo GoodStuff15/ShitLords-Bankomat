@@ -1,4 +1,4 @@
-﻿namespace Shitlords_Bankomat.Menu
+﻿namespace Shitlords_Bankomat
 {
     public class AdminMenu : Menu
     {
@@ -9,7 +9,7 @@
         }
 
 
-        public override void ShowMenu(User user)
+        public override void ShowMenu()
         {
             Console.WriteLine($"Admin Menu:\n" +
                 $"1. Add new customer." +

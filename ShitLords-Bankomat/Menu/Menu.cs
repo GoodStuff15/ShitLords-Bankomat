@@ -1,11 +1,11 @@
-﻿namespace Shitlords_Bankomat.Menu
+﻿namespace Shitlords_Bankomat
 {
     public abstract class Menu
     {
 
         //Menu title ASCII Art?
 
-        public abstract void ShowMenu(User user);
+        public abstract void ShowMenu();
 
         public void Return()
         {

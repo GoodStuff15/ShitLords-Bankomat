@@ -1,4 +1,4 @@
-﻿namespace Shitlords_Bankomat.Menu
+﻿namespace Shitlords_Bankomat
 {
     public class CustomerMenu : Menu
     {
@@ -7,7 +7,7 @@
 
         }
 
-        public override void ShowMenu(User user)
+        public override void ShowMenu()
         {
             Console.WriteLine($"Customer Menu:\n" +
                 $"1. Show balance / accounts.\n" +
@@ -19,5 +19,7 @@
                 $"7. Logout." +
                 $"8. Exit program.");
         }
+
+
     }
 }

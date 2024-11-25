@@ -4,13 +4,14 @@
     {
         public override User MakeUser()
         {
-            string id;
-            string password;
-            string userType;
+        //    string id;
+        //    string password;
+        //    string userType;
 
-            User user = new Admin(id, password, userType);
+        //    User user = new Admin(id, password, userType);
 
-            return user;
+        //    return user;
+        return null;
         }
     }
 }
