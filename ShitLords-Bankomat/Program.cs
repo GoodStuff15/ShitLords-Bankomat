@@ -1,4 +1,4 @@
-﻿using Shitlords_Bankomat.Menu;
+﻿
 
 namespace Shitlords_Bankomat
 {
@@ -6,6 +6,7 @@ namespace Shitlords_Bankomat
     {
         static void Main(string[] args)
         {
+
             LogIn();
 
             Console.ReadLine();
@@ -57,6 +58,7 @@ namespace Shitlords_Bankomat
             //PasswordCheck
             //BlockedCheck
             //Usercheck.
+
         }
     }
 }

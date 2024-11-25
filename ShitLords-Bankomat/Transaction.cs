@@ -46,7 +46,7 @@
         //}
         public override string ToString()
         {
-            return $"{TransferDate}: Amount:{Amount} | From account:{FromAccount.AccountNumber} | To account:{ToAccount.AccountNumber}";
+            return $"{TransferDate}|{Amount}|{FromAccount.AccountNumber}|{ToAccount.AccountNumber}";
         }
     }
 }
