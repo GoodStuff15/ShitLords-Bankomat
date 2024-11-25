@@ -1,7 +1,8 @@
-﻿namespace Shitlords_Bankomat.Menu
+﻿namespace Shitlords_Bankomat
 {
     public abstract class Menu
     {
+
         public static bool access;
         public abstract void ShowMenu();
         
@@ -19,6 +20,7 @@
                 "/_/  /_/\\___/_//_/_/\\_\\\\__/\\_, / /____/\\_,_/___/_/_//_/\\__/___/___/\r\n" +
                 "                          /___/                                    ");
         }
+
 
         public void Return()
         {

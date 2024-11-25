@@ -1,4 +1,4 @@
-﻿namespace Shitlords_Bankomat.Menu
+﻿namespace Shitlords_Bankomat
 {
     public class CustomerMenu : Menu
     {
@@ -68,5 +68,7 @@
                 }
             }
         }
+
+
     }
 }
