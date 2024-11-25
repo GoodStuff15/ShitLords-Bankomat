@@ -24,7 +24,7 @@ namespace Shitlords_Bankomat
 
             
             User user = new Customer(id, password, fName, lName, username);
-
+            nextId++;
             return user;
             
         }

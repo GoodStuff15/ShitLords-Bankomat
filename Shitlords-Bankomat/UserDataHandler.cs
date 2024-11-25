@@ -59,7 +59,8 @@ namespace Shitlords_Bankomat
                             string[] variables = line.Split('|');
                             string id = variables[0];
                             string pw = variables[1];
-                            var admin = new Admin(id, pw, "hej");
+                            string un = variables[2];
+                            var admin = new Admin(id, pw, un);
 
                             return admin;
                         }
@@ -104,7 +105,7 @@ namespace Shitlords_Bankomat
 
             if (!openFile.Contains(saveThis.Id))
             {
-                openFile.Append(saveThis.ToString());
+                openFile = openFile.Append(saveThis.ToString()).ToArray();
             }
             else
             {

@@ -6,27 +6,31 @@ namespace Shitlords_Bankomat
     {
         static void Main(string[] args)
         {
-            var customerFactory = new CustomerFactory();
-            var userdatahandler = new UserDataHandler();
 
-            for(int i = 0; i < 4; i++)
-            {
-               userdatahandler.Save(customerFactory.CreateUser());
-            }
-
-            
-            var userlist = userdatahandler.LoadAll();
-
-            foreach(User u in userlist)
-            {
-                Console.WriteLine(u.ToString());
-            }
 
            // LogIn();
 
             Console.ReadLine();
         }
 
+        static void Testing()
+        {
+            var customerFactory = new CustomerFactory();
+            var userdatahandler = new UserDataHandler();
+
+            for (int i = 0; i < 2; i++)
+            {
+                userdatahandler.Save(customerFactory.CreateUser());
+            }
+
+
+            var userlist = userdatahandler.LoadAll();
+
+            foreach (User u in userlist)
+            {
+                Console.WriteLine(u.ToString());
+            }
+        }
         void LogIn(UserDataHandler usr)
         {
             //bool login = true;

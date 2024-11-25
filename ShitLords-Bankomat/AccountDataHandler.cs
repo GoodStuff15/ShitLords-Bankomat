@@ -125,7 +125,7 @@ namespace Shitlords_Bankomat
 
             if (x == null)
             {
-                openFile.Append(saveThis.ToString());
+                openFile = openFile.Append(saveThis.ToString()).ToArray();
                 
             }
             else
