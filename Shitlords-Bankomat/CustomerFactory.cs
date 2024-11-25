@@ -6,7 +6,6 @@ namespace Shitlords_Bankomat
     {
         public override User MakeUser()
         {
-            
             //string id;
             //string password;
             //string fName;
