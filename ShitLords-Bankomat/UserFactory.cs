@@ -2,11 +2,11 @@
 {
     public abstract class UserFactory
     {
-        public abstract User MakeUser();
+        public abstract User MakeUser(UserDataHandler userDataHandler);
 
         public User CreateUser()
         {
-            return this.MakeUser();
+            return this.MakeUser(new UserDataHandler());
         }
     }
 }
