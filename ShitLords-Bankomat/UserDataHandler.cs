@@ -124,7 +124,7 @@ namespace Shitlords_Bankomat
 
             foreach(string s in openFile)
             {
-                if(s.Contains(password) && s.Contains(userid))
+                if(s.Contains(password) && s.Contains(username))
                 {
                     return true;
                 }
@@ -138,7 +138,7 @@ namespace Shitlords_Bankomat
 
             foreach(string s in openFile)
             {
-                if (s.Contains(userid) && s.Contains("Blocked"))
+                if (s.Contains(username) && s.Contains("Blocked"))
                     {
                     return false;
                     }   

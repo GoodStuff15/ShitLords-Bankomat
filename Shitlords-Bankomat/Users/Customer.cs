@@ -14,7 +14,7 @@ namespace Shitlords_Bankomat
 
         public bool IsBlocked { get; set; }
 
-        public Customer(string id, string passWord, string firstName, string lastName, string userName) : base(id, passWord, userName)
+        public Customer(string id, string passWord, string firstName, string lastName) : base(id, passWord)
         {
             accounts = new List<Account>();
             FirstName = firstName;

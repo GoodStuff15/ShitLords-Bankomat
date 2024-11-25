@@ -3,7 +3,7 @@
     internal class Admin : User
     {
         public override string UserType { get; } = "Admin";
-        public Admin(string id, string passWord, string userName) : base(id, passWord, userName)
+        public Admin(string id, string passWord) : base(id, passWord)
         {
         }
 
