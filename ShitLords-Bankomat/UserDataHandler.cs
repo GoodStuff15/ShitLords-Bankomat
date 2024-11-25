@@ -1,5 +1,7 @@
 ﻿
 
+using System.Security.Cryptography.X509Certificates;
+
 namespace Shitlords_Bankomat
 {
     public class UserDataHandler : IDataHandler<User>
@@ -114,6 +116,49 @@ namespace Shitlords_Bankomat
         public void SaveAll(List<User> saveList)
         {
             throw new NotImplementedException();
+        }
+
+        public bool PasswordCheck(string username, string password)
+        {
+            string[] openFile = File.ReadAllLines (FilePath);
+
+            foreach(string s in openFile)
+            {
+                if(s.Contains(password) && s.Contains(userid))
+                {
+                    return true;
+                }
+            }
+            return false; 
+        }
+
+        public bool BlockCheck(string username)
+        {
+            string[] openFile = File.ReadAllLines(FilePath);
+
+            foreach(string s in openFile)
+            {
+                if (s.Contains(userid) && s.Contains("Blocked"))
+                    {
+                    return false;
+                    }   
+            }
+
+            return true;
+        }
+
+        public bool Exists(string username)
+        {
+            string[] openFile = File.ReadAllLines(FilePath);
+
+            foreach(string s in openFile)
+            {
+                if (s.Contains(username))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
