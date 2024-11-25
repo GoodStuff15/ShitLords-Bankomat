@@ -1,5 +1,4 @@
 ﻿
-using Shitlords_Bankomat.Users;
 
 namespace Shitlords_Bankomat
 {
@@ -48,7 +47,7 @@ namespace Shitlords_Bankomat
                             string pw = variables[1];
                             string fn = variables[2];
                             string ln = variables[3];
-                            var customer = new Customer(id, pw, fn, ln, "Customer");
+                            var customer = new Customer(id, pw, fn, ln);
 
                             return customer;
                         }
@@ -57,7 +56,7 @@ namespace Shitlords_Bankomat
                             string[] variables = line.Split('|');
                             string id = variables[0];
                             string pw = variables[1];
-                            var admin = new Admin(id, pw, "Admin");
+                            var admin = new Admin(id, pw);
 
                             return admin;
                         }
@@ -81,7 +80,7 @@ namespace Shitlords_Bankomat
                     string pw = variables[1];
                     string fn = variables[2];
                     string ln = variables[3];
-                    var customer = new Customer(id, pw, fn, ln, "Customer");
+                    var customer = new Customer(id, pw, fn, ln);
 
                     allusers.Add(customer);
                 }
@@ -99,7 +98,7 @@ namespace Shitlords_Bankomat
         {
             string[] openFile = File.ReadAllLines(FilePath);
 
-            if (!openFile.Contains(saveThis.ID))
+            if (!openFile.Contains(saveThis.Id))
             {
                 openFile.Append(saveThis.ToString());
             }

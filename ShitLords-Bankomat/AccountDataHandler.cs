@@ -59,19 +59,20 @@ namespace Shitlords_Bankomat
                     int accountnumber = Int32.Parse(variables[3]);
                     string ownerid = variables[4];
 
-                    accounts.Add(new BasicAccount(accountName, amount, currency, accountnumber, ownerid));
+                    accounts.Add(new SalaryAccount(amount, currency, accountnumber, ownerid));
                 }
                 else if (line.Contains("SavingsAccount"))
                 {
                     string[] variables = line.Split('|');
 
                     string accountName = variables[0];
-                    decimal amount = Decimal.Parse(variables[1]);
+                    decimal balance = Decimal.Parse(variables[1]);
                     string currency = variables[2];
                     int accountnumber = Int32.Parse(variables[3]);
                     string ownerid = variables[4];
+                    decimal interest = Decimal.Parse(variables[5]);
 
-                    accounts.Add(new SavingsAccount(accountName, amount, currency, accountnumber, ownerid));
+                    accounts.Add(new SavingsAccount(balance, currency, accountnumber, ownerid));
                 }
             }
 
@@ -86,7 +87,7 @@ namespace Shitlords_Bankomat
 
             foreach (string lines in openFile)
             {
-                if (lines.Contains(userid) && lines.Contains("BasicAccount"))
+                if (lines.Contains(userid) && lines.Contains("SalaryAccount"))
                 {
                     string[] variables = lines.Split('|');
 
@@ -96,19 +97,20 @@ namespace Shitlords_Bankomat
                     int accountnumber = Int32.Parse(variables[3]);
                     string ownerid = variables[4];
 
-                    accounts.Add(new BasicAccount(accountName, amount, currency, accountnumber, ownerid));
+                    accounts.Add(new SalaryAccount(amount, currency, accountnumber, ownerid));
                 }
                 else if (lines.Contains(userid) && lines.Contains("SavingsAccount"))
                 {
                     string[] variables = lines.Split('|');
 
                     string accountName = variables[0];
-                    decimal amount = Decimal.Parse(variables[1]);
+                    decimal balance = Decimal.Parse(variables[1]);
                     string currency = variables[2];
                     int accountnumber = Int32.Parse(variables[3]);
                     string ownerid = variables[4];
+                    decimal interest = Decimal.Parse(variables[5]);
 
-                    accounts.Add(new SavingsAccount(accountName, amount, currency, accountnumber, ownerid));
+                    accounts.Add(new SavingsAccount(balance, currency, accountnumber, ownerid));
                 }
             }
 
@@ -119,9 +121,16 @@ namespace Shitlords_Bankomat
         {
             string[] openFile = File.ReadAllLines(FilePath);
 
-            if (!openFile.Contains(saveThis.AccountNumber))
+            string x = Array.Find(openFile, y => y.Contains((saveThis.AccountNumber).ToString()));
+
+            if (x == null)
             {
                 openFile.Append(saveThis.ToString());
+                
+            }
+            else
+            {
+                openFile[Array.IndexOf(openFile, Array.Find(openFile, y => y.Contains((saveThis.AccountNumber).ToString())))] = saveThis.ToString();
             }
 
             File.WriteAllLines(FilePath, openFile);
