@@ -1,13 +1,18 @@
-﻿namespace Shitlords_Bankomat.Accounts
+﻿namespace Shitlords_Bankomat
 {
     internal class SavingsAccount : Account
     {
-        public override string AccountType { get; set; } = "SavingsAccount";
-        public decimal Interest { get; set; }
-        public SavingsAccount(string accountName, decimal amount, decimal currency, int accountNumber, int ownerID, decimal interest) 
-            : base(accountName, amount, currency, accountNumber, ownerID)
+        public override string AccountType { get; } = "SavingsAccount";
+
+        public SavingsAccount(decimal amount, string currency, int accountNumber, string ownerID) 
+            : base(amount, currency, accountNumber, ownerID)
         {
-            Interest = interest;
+            Interest = GetInterest();
+        }
+
+        public override decimal GetInterest()
+        {
+            return 1;
         }
     }
 }
