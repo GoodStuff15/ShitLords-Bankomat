@@ -23,10 +23,12 @@
         {
             if(FromAccount.Balance >= Amount)
             {
+                Transaction transaction = new Transaction(Amount, FromAccount, ToAccount);
                 FromAccount.Balance -= Amount;
                 ToAccount.Balance += Amount;
+                var transactionDataHandler = new TransactionDataHandler();
+                transactionDataHandler.Save(transaction);
                 return true;
-                //LOG
             }
             else
             {
@@ -34,16 +36,7 @@
                 return false;
             }
         }
-        //public void Log()
-        //{
-        //    var logEntry = new History
-        //    {
-        //        Date = TransferDate,
-        //        Amount = Amount,
-        //    };
-        //    FromAccount.history.Add(logEntry);
-        //    ToAccount.history.Add(logEntry);
-        //}
+       
         public override string ToString()
         {
             return $"{TransferDate}|{Amount}|{FromAccount.AccountNumber}|{ToAccount.AccountNumber}";
