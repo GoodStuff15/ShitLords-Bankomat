@@ -7,5 +7,9 @@
         {
         }
 
+        public override string ToString()
+        {
+            return $"{Id}|{UserName}|{PassWord}|{UserType}";
+        }
     }
 }

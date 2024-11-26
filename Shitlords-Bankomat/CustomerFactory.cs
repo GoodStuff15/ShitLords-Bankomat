@@ -23,7 +23,7 @@ namespace Shitlords_Bankomat
             string password = Console.ReadLine();
 
             
-            User user = new Customer(id, password, fName, lName);
+            User user = new Customer(id, password, fName, lName, username);
 
             return user;
             

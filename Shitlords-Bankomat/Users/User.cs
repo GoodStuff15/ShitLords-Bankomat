@@ -8,9 +8,10 @@
 
         public string Id { get; set; }
         public string PassWord { get; set; }
+
+        public string UserName { get; set; }
         public abstract string UserType { get; }
         public bool IsLoggedIn { get; set; }
-        public string UserName { get; set; }
         //Menu userMenu
 
         public User(string id, string passWord, string userName)
